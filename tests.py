@@ -24,7 +24,7 @@ class ThirdParty(object):
 
 class test_numpy_msgpack(TestCase):
     def setUp(self):
-         patch()
+         patch(allow_pickle=True)
 
     def encode_decode(self, x, use_list=True, max_bin_len=-1):
         x_enc = msgpack.packb(x)
