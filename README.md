@@ -18,13 +18,9 @@ native complex data types is also supported.
 
 Installation
 ------------
-msgpack-numpy requires msgpack-python and numpy. If you 
-have [pip](http://www.pip-installer.org/) installed on your
-system, run
+msgpack-numpy requires msgpack-python and numpy.  
 
-    pip install msgpack-numpy
-
-to install the package and all dependencies. You can also download 
+To install the package and all dependencies. You can download 
 the source tarball, unpack it, and run
 
     python setup.py install
