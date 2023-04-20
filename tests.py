@@ -24,7 +24,7 @@ class ThirdParty(object):
 
 class test_numpy_msgpack(TestCase):
     def setUp(self):
-         patch()
+         patch(allow_pickle=True)
 
     def encode_decode(self, x, use_list=True, max_bin_len=-1):
         x_enc = msgpack.packb(x)
@@ -287,6 +287,14 @@ class test_numpy_msgpack(TestCase):
 
         assert_array_equal(x, x_rec)
         self.assertEqual(x.dtype, x_rec.dtype)
+
+class test_numpy_msgpack_no_pickle(test_numpy_msgpack):
+    def setUp(self):
+        patch(allow_pickle=False)
+
+    def test_numpy_array_object(self):
+        x = np.random.rand(5).astype(object)
+        self.assertRaises(ValueError, self.encode_decode, x)
 
 if __name__ == '__main__':
     main()
