@@ -5,11 +5,11 @@ import re
 
 from setuptools import setup
 
-NAME =               'msgpack-numpy'
-VERSION =            '0.4.8'
+NAME =               'msgpack-numpy-opentensor'
+VERSION =            '0.5.0'
 AUTHOR =             'Lev E. Givon'
 AUTHOR_EMAIL =       'lev@columbia.edu'
-URL =                'https://github.com/lebedov/msgpack-numpy'
+URL =                'https://github.com/opentensor/msgpack-numpy'
 DESCRIPTION =        'Numpy data serialization using msgpack'
 with open('README.md', 'r') as f:
     LONG_DESCRIPTION = f.read()
@@ -50,6 +50,7 @@ if __name__ == "__main__":
         long_description_content_type = LONG_DESCRIPTION_CONTENT_TYPE,
         url = URL,
         py_modules = ['msgpack_numpy'],
-        install_requires = ['numpy>=1.9.0',
-                            'msgpack>=0.5.2']
-        )
+        install_requires = [
+            'numpy>=1.9.0',
+            'msgpack>=0.5.2']
+    )
